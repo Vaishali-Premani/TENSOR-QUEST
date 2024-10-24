@@ -350,7 +350,6 @@ section {
 
 .home-grid .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 27.5rem);
   gap: 1.5rem;
   justify-content: center;
   align-items: flex-start;
@@ -360,6 +359,11 @@ section {
   background-color: var(--white);
   border-radius: 0.5rem;
   padding: 2rem;
+}
+
+.box-container{
+  display: flex;
+  justify-content: center;
 }
 
 .home-grid .box-container .box .title {
