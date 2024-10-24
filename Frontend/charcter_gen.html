@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Avatar Generator</h1>
+
+        <form id="avatarForm">
+            <label for="gender">Enter the gender of your character:</label>
+            <input type="text" id="gender" name="gender" placeholder="e.g., Male or Female" required>
+
+            <label for="facial">Explain facial features of your avatar:</label>
+            <input type="text" id="facial" name="facial" placeholder="e.g., Sharp nose, round eyes" required>
+
+            <label for="hair">Hair description:</label>
+            <input type="text" id="hair" name="hair" placeholder="e.g., Long, black, curly" required>
+
+            <label for="body_type">Explain the body type:</label>
+            <input type="text" id="body_type" name="body_type" placeholder="e.g., Athletic, slim" required>
+
+            <label for="clothing">Explain the clothing:</label>
+            <input type="text" id="clothing" name="clothing" placeholder="e.g., Casual, futuristic" required>
+
+            <label for="age">Enter the age/age-group:</label>
+            <input type="text" id="age" name="age" placeholder="e.g., 25 or teenager" required>
+
+            <label for="complexion">Describe the complexion of your character:</label>
+            <input type="text" id="complexion" name="complexion" placeholder="e.g., Fair, tanned" required>
+
+            <label for="ethnicity">Enter the ethnicity:</label>
+            <input type="text" id="ethnicity" name="ethnicity" placeholder="e.g., Asian, European" required>
+
+            <button type="submit">Generate Image</button>
+        </form>
+
+        <div class="image-container" id="imageContainer"></div>
+    </div>
+
+    <script>
+        document.getElementById('avatarForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Collecting the input values
+            const gender = document.getElementById('gender').value;
+            const facial = document.getElementById('facial').value;
+            const hair = document.getElementById('hair').value;
+            const bodyType = document.getElementById('body_type').value;
+            const clothing = document.getElementById('clothing').value;
+            const age = document.getElementById('age').value;
+            const complexion = document.getElementById('complexion').value;
+            const ethnicity = document.getElementById('ethnicity').value;
+
+            // Create a curated prompt for the image generation
+            const curatedPrompt = `Generate an anime character based on the following attributes: 
+                                   Gender: ${gender}, 
+                                   Facial Features: ${facial}, 
+                                   Hair: ${hair}, 
+                                   Body Type: ${bodyType}, 
+                                   Clothing: ${clothing}, 
+                                   Age: ${age}, 
+                                   Complexion: ${complexion}, 
+                                   Ethnicity: ${ethnicity}.`;
+
+            // Construct the URL for the image
+            const url = `https://pollinations.ai/p/${encodeURIComponent(curatedPrompt)}?model=flux&width=512&height=512&nologo=true&enhance=True`;
+
+            localStorage.setItem('img_url',url)
+            // Update the image container with the image
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.innerHTML = `
+                <p>Generated Image:</p>
+                <img src="${url}" alt="Generated Character" id="generatedImage">
+                <button><a href="./update.html">Go Back to Updating your profile</a></button>
+            `;
+            
+        });
+    </script>
+</body>
+</html>

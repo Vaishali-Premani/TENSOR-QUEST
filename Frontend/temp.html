@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdTech Rewards & Level-Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+
+
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <h1>Welcome, Learner!</h1>
+        <div class="level-system">
+            <p>Current Level: <span id="level">1</span></p>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+            <p>Points: <span id="points">0</span> / <span id="pointsRequired">100</span></p>
+        </div>
+
+        <div class="actions">
+            <button onclick="completeTask(10)">Complete Lesson (+10 Points)</button>
+            <button onclick="completeTask(20)">Complete Quiz (+20 Points)</button>
+            <button onclick="completeTask(30)">Complete Challenge (+30 Points)</button>
+        </div>
+
+        <div class="rewards">
+            <h2>Rewards Earned:</h2>
+            <ul id="rewards-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
