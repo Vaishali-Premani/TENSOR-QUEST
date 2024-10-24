@@ -188,11 +188,11 @@ function isConsecutiveDay(prevDate, currentDate) {
 function renderCheckinLog() {
   checkinLog.innerHTML = ""; // Clear the log
 
-  checkinDates.forEach((date) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `Checked in on: ${date}`;
-    checkinLog.appendChild(listItem);
-  });
+  // checkinDates.forEach((date) => {
+  //   const listItem = document.createElement("li");
+  //   listItem.textContent = `Checked in on: ${date}`;
+  //   checkinLog.appendChild(listItem);
+  // });
 }
 
 // leaderBoard
