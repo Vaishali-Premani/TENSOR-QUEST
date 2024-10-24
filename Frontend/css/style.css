@@ -1624,3 +1624,7 @@ section {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
+
+.username {
+  font-size: 30px;
+}
