@@ -18,71 +18,44 @@
   <body>
     <header class="header">
       <section class="flex">
-        <a href="home.html" class="logo">Tensor Quest</a>
-
-        <form action="search.html" method="post" class="search-form">
-          <input
-            type="text"
-            name="search_box"
-            required
-            placeholder="search courses..."
-            maxlength="100"
-          />
-          <button type="submit" class="fas fa-search"></button>
-        </form>
-
         <div class="icons">
           <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+        <a href="home.html" class="logo">Tensor Quest</a>
+
+
+        <div class="icons">
           <div id="search-btn" class="fas fa-search"></div>
-          <div id="user-btn" class="fas fa-user"></div>
+          <!-- <div id="user-btn" class="fas fa-user"></div> -->
           <div id="toggle-btn" class="fas fa-sun"></div>
         </div>
 
-        <div class="profile">
-          <img src="images/pic-1.jpg" class="image" alt="" />
-          <h3 class="name">Full Name</h3>
-          <p class="role">studen</p>
-          <a href="profile.html" class="btn">view profile</a>
-          <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">register</a>
-          </div>
-        </div>
       </section>
     </header>
 
     <div class="side-bar">
+
       <div id="close-btn">
-        <i class="fas fa-times"></i>
+         <i class="fas fa-times"></i>
       </div>
-
+   
       <div class="profile">
-        <img src="images/pic-1.jpg" class="image" alt="" />
-        <h3 class="name">Name</h3>
-        <p class="role">studen</p>
-        <a href="profile.html" class="btn">view profile</a>
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="username">Username</h3>
+         <p class="role">Student</p>
       </div>
-
+   
       <nav class="navbar">
-        <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
-        <a href="about.html"
-          ><i class="fas fa-question"></i><span>about</span></a
-        >
-        <a href="courses.html"
-          ><i class="fas fa-graduation-cap"></i><span>courses</span></a
-        >
-        <a href="leader_board.html"
-          ><i class="fa-solid fa-ranking-star"></i><span>Leader Board</span></a
-        >
-        <a href="redeem_prize.html"
-          ><i class="fa-solid fa-gift"></i><span>Redeem Your Prize</span></a
-        >
-        <!-- <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a> -->
-        <a href="contact.html"
-          ><i class="fas fa-headset"></i><span>contact us</span></a
-        >
+         <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+         <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+         <a href="#"><i class="fas fa-arrow-up-right-from-square"></i><span>Learning Path</span></a>
+         <a href="leader_board.html"><i class="fa-solid fa-ranking-star"></i><span>Leader Board</span></a>
+         <a href="redeem_prize.html"><i class="fa-solid fa-gift"></i><span>Redeem Your Prize</span></a>
+         <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+         <a href="contact.html"><i class="fas fa-headset"></i><span>Contact us</span></a>
       </nav>
-    </div>
+   
+   </div>
 
     <section class="form-container">
       <form action="" method="post" enctype="multipart/form-data">
@@ -132,11 +105,6 @@
         <input type="submit" value="update profile" name="submit" class="btn" />
       </form>
     </section>
-
-    <footer class="footer">
-      &copy; copyright @ 2022 by <span>mr. web designer</span> | all rights
-      reserved!
-    </footer>
 
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
