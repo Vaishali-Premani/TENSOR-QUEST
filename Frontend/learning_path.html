@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .tree {
+            padding: 20px;
+        }
+
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 2px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 2px solid #ccc;
+        }
+
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: 0 none;
+        }
+
+        .tree li:last-child::before {
+            border-right: 2px solid #ccc;
+            border-radius: 0 5px 0 0;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 2px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+
+        .tree li a {
+            border: 2px solid #ccc;
+            padding: 10px;
+            text-decoration: none;
+            color: #666;
+            font-size: 12px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            background-color: white;
+        }
+
+        .tree li a:hover, .tree li a:hover+ul li a {
+            background: #c8e4f8;
+            color: #000;
+            border: 2px solid #94a0b4;
+        }
+
+        .tree li a:hover+ul li::after,
+        .tree li a:hover+ul li::before,
+        .tree li a:hover+ul::before,
+        .tree li a:hover+ul ul::before {
+            border-color: #94a0b4;
+        }
+
+        /* Color coding for different branches */
+        .mathematics { background-color: #e040fb !important; color: white !important; }
+        .programming { background-color: #2196f3 !important; color: white !important; }
+        .dbms { background-color: #4caf50 !important; color: white !important; }
+        .ml { background-color: #ff9800 !important; color: white !important; }
+
+        .collapsible {
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <ul>
+            <li>
+                <a href="#" class="collapsible">GATE DA<br>(Data Science & Artificial Intelligence)</a>
+                <ul>
+                    <li>
+                        <a href="#" class="mathematics collapsible">Mathematics</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="mathematics collapsible">Probability & Statistics</a>
+                                <ul>
+                                    <li><a href="#" class="mathematics">Probability</a></li>
+                                    <li><a href="#" class="mathematics">Statistics</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="mathematics collapsible">Linear Algebra</a>
+                                <ul>
+                                    <li><a href="#" class="mathematics">Matrices</a></li>
+                                    <li><a href="#" class="mathematics">Vectors</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="programming collapsible">Programming and DSA</a>
+                        <ul>
+                            <li><a href="#" class="programming">Python</a></li>
+                            <li>
+                                <a href="#" class="programming collapsible">Data Structures</a>
+                                <ul>
+                                    <li><a href="#" class="programming">Arrays</a></li>
+                                    <li><a href="#" class="programming">Linked Lists</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dbms collapsible">DBMS and Warehousing</a>
+                        <ul>
+                            <li><a href="#" class="dbms">SQL</a></li>
+                            <li><a href="#" class="dbms">NoSQL</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="ml collapsible">Machine Learning and AI</a>
+                        <ul>
+                            <li><a href="#" class="ml">Supervised Learning</a></li>
+                            <li><a href="#" class="ml">Deep Learning</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibles = document.querySelectorAll('.collapsible');
+            
+            collapsibles.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const childUl = this.nextElementSibling;
+                    if (childUl) {
+                        childUl.classList.toggle('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
