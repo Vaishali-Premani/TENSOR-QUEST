@@ -225,3 +225,20 @@ tabs.forEach(function (tab) {
     }
   });
 });
+
+window.onload = function() {
+  const videoContainer = document.getElementById('video-container');
+  
+  if (!videoContainer.innerHTML) {
+      videoContainer.innerHTML = `
+          <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/VIDEO_ID" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+          </iframe>`;
+  }
+};

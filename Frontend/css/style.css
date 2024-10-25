@@ -1632,3 +1632,17 @@ section {
 .username {
   font-size: 30px;
 }
+
+.video-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  display: block;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
